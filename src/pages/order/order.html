@@ -3,25 +3,36 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Ordem</ion-title>
+    <ion-title>ORDEM #{{ order.id }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <div class="total">
-
-  </div>
-  <div class="amount-top" *ngIf="this.navParams.get('order')">
-    <ion-grid>
-      <ion-row no-border>
-        <ion-col text-left> ORDEM #{{ order.id }}</ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col text-left> ORDEM #{{ order.id }}</ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  <ion-list no-padding no-margin *ngIf="this.navParams.get('order')">
+    <ion-row text-center border-bottom>
+      <ion-col>Criada em: <strong>{{ order.dt_created | date: 'dd/MM/yyyy HH:mm:ss' }}</strong></ion-col>
+    </ion-row>
+    <ion-row no-border *ngFor="let item of order.cart.items">
+      <ion-col col-4 class="item-title">
+        <ion-icon [name]="item.icon" item-start></ion-icon> {{ item.description }}
+      </ion-col>
+      <ion-col col-4 class="item-title" text-center>
+        {{item.qty }}x {{ item.price | currency: 'BRL'}}
+      </ion-col>
+      <ion-col col-4 class="item-title" text-right>
+          {{ item.price * item.qty | currency: 'BRL'}}
+        </ion-col>
+    </ion-row>
+    <ion-row border-top border-bottom>
+      <ion-col col-6>
+        <h3>TOTAL</h3>
+      </ion-col >
+      <ion-col col-6 text-right>
+          <h3>{{  order.order_value | currency: 'BRL'}}</h3>
+      </ion-col >
+    </ion-row>
+  </ion-list>
 </ion-content>
 <ion-footer padding>
-    <button ion-button mode="ios" block (click)="navParams.setRoot('ListPage')">Recomeçar</button>
+  <button ion-button mode="ios" block (click)="navCtrl.setRoot('ListPage')">Recomeçar</button>
 </ion-footer>

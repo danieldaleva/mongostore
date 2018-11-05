@@ -1,6 +1,11 @@
 page-order {
+    .row[border-top] {
+        border-top: 2px dotted #e5e5e5;
+    }
+    .row[border-bottom] {
+        border-bottom: 2px dotted #e5e5e5;
+    }
     .row {
-        border-bottom: 1px solid #e5e5e5;
         padding: 16px 16px;
     }
     .item-title {
@@ -18,7 +23,7 @@ page-order {
         color: black;
         min-height: 55px;
         font-size: 2rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        //box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
         .total-label {
             color: black;
