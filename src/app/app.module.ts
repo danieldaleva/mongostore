@@ -19,8 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 			pageTransition: 'ios-transition',
 			swipeBackEnabled: false,
       backButtonText: ''
-      },
-    ),
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
