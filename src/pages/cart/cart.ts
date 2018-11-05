@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { Cart } from './../../models/cart';
+import { Order } from './../../models/order';
 
 @IonicPage()
 @Component({
@@ -9,6 +10,7 @@ import { Cart } from './../../models/cart';
 })
 export class CartPage {
   private cart: Cart = new Cart();
+  private order: Order = new Order();
   public total: number = 0;
 
   constructor(
@@ -29,7 +31,12 @@ export class CartPage {
     }
   }
 
-  updateCollection() {
-
-  }
+    updateCollection() {
+      // get order id from back-end
+      this.order.id = '000000000000';
+      this.order.cart = this.cart;
+      this.order.dt_created = new Date();
+      this.order.order_value = this.total;
+      this.navCtrl.push('OrderPage', {order: this.order})
+    }
 }

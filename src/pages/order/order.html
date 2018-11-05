@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ordem</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="total">
+
+  </div>
+  <div class="amount-top" *ngIf="this.navParams.get('order')">
+    <ion-grid>
+      <ion-row no-border>
+        <ion-col text-left> ORDEM #{{ order.id }}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col text-left> ORDEM #{{ order.id }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer padding>
+    <button ion-button mode="ios" block (click)="navParams.setRoot('ListPage')">Recomeçar</button>
+</ion-footer>

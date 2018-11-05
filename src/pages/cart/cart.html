@@ -21,10 +21,10 @@
   </div>
   <ion-list no-padding no-margin *ngIf="this.navParams.get('cart') && cart.items.length > 0">
     <ion-row *ngFor="let item of cart.items">
-      <ion-col col-4 class="item-title">
+      <ion-col col-3 class="item-title">
         <ion-icon [name]="item.icon" item-start></ion-icon> {{ item.description }}
       </ion-col>
-      <ion-col col-2 class="item-title">
+      <ion-col col-3 class="item-title" text-center>
         <strong>Qty: </strong> {{
         item.qty }}
       </ion-col>
