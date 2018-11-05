@@ -1,4 +1,7 @@
 page-order {
+    .back-button{
+        display: none !important;
+    }
     .row[border-top] {
         border-top: 2px dotted #e5e5e5;
     }
