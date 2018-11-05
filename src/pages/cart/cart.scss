@@ -1,24 +1,10 @@
 page-cart {
     .row {
         border-bottom: 1px solid #e5e5e5;
-        padding: 5px 16px;
+        padding: 16px 16px;
     }
     .item-title {
-        .label{
-            font-size: 20px;
-        }
-    }
-    .item-qty {
-        .label{
-            font-size: 16px;
-        }
-        .select {
-            padding: 0;
-            max-width: 100%;
-        }
-        .select-icon {
-            width: 25px;
-        }
+        font-size: 16px;
     }
 
     .amount-top {
@@ -32,8 +18,6 @@ page-cart {
         color: black;
         min-height: 55px;
         font-size: 2rem;
-        //border-bottom: 2px solid $white-c;
-        border-top: 2px dotted e5e5e5;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
         .total-label {
@@ -45,6 +29,10 @@ page-cart {
         .col {
             margin: 0;
             padding: 0;
+        }
+
+        .row {
+            border-bottom: 0;
         }
     }
 

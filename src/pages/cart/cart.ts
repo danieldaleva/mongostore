@@ -17,9 +17,11 @@ export class CartPage {
 
     if (this.navParams.get('cart')) {
       this.cart = this.navParams.get('cart');
-      for(let i=0; i<= this.cart.items.length; i++){
-        console.log(this.cart.items)
-        //this.total += this.cart.items[i].price * this.cart.items[i].qty;
+      if(this.cart) {
+        for(let i=0; i< this.cart.items.length; i++){
+          console.log(this.cart.items[i]);
+          this.total += this.cart.items[i].price * this.cart.items[i].qty;
+        }
       }
       console.log(this.cart)
     } else {
