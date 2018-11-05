@@ -51,9 +51,7 @@ export class ListPage {
 
   addToCart(i: number, item: Item) {
     let qty = this.form.value.qty;
-    // console.log(i + " =  " + qty);
     if (qty > 0) {
-      // add or update
       item.qty = qty;
       // New item
       if (this.cart.items.indexOf(item) === -1) {
@@ -85,5 +83,4 @@ export class ListPage {
       alert("Adicione um item no Carrinho")
     }
   }
-
 }
